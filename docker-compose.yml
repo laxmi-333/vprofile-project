@@ -2,7 +2,7 @@ version: '3.8'
 services:
   vprodb:
     build: 
-       context: ./Dockerfiles/db
+       context: ./Docker-files/db
     image: kubelaxmi/vprofiledb
     container_name: vprodb
     ports:
@@ -13,7 +13,7 @@ services:
       - MYSQL_ROOT_PASSWORD=vprodbpass
 
   vprocache:
-    image: memecached 
+    image: memcached 
     ports:
       - "11211:11211"
 
@@ -27,7 +27,7 @@ services:
 
   vproapp:
     build: 
-       context: ./Dockerfiles/app
+       context: ./Docker-files/app
     image: kubelaxmi/vprofileapp
     container_name: vproapp
     ports:
@@ -37,7 +37,7 @@ services:
 
   vproweb:
     build: 
-       context: ./Dockerfiles/web
+       context: ./Docker-files/web
     image: kubelaxmi/vprofileweb
     container_name: vproweb
     ports:
